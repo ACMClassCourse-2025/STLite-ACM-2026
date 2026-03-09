@@ -6,12 +6,6 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
     set(CMAKE_CXX_STANDARD 20)
 endif()
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/deque-std.hpp
-    ${CMAKE_CURRENT_BINARY_DIR}/deque.hpp
-    COPYONLY
-)
-
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/data)
