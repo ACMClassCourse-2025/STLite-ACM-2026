@@ -60,102 +60,102 @@ public:
 		iterator(T* pointer, const vector* vector) : p(pointer), v(vector) {}
 		iterator operator+(const int &n) const
 		{
-                    return iterator(p + n, v);
+			return iterator(p + n, v);
 			//TODO
 		}
 		iterator operator-(const int &n) const
 		{
-	            return iterator(p - n, v);
+			return iterator(p - n, v);
 			//TODO
 		}
 		// return the distance between two iterators,
 		// if these two iterators point to different vectors, throw invaild_iterator.
 		int operator-(const iterator &rhs) const
 		{
-	            if (v != rhs.v) {
-	                throw invalid_iterator();
-	            }
-	            return p - rhs.p;
+			if (v != rhs.v) {
+				throw invalid_iterator();
+			}
+			return p - rhs.p;
 			//TODO
 		}
 		iterator& operator+=(const int &n)
 		{
-	            p += n;
-	            return *this;
+			p += n;
+			return *this;
 			//TODO
 		}
 		iterator& operator-=(const int &n)
 		{
-	            p -= n;
-	            return *this;
+			p -= n;
+			return *this;
 			//TODO
 		}
 		/**
 		 * TODO iter++
 		 */
 		iterator operator++(int) {
-	            iterator tmp = *this;
-	            ++p;
-	            return tmp;
-	        }
+			iterator tmp = *this;
+			++p;
+			return tmp;
+		}
 		/**
 		 * TODO ++iter
 		 */
 		iterator& operator++() {
-	            ++p;
-	            return *this;
-	        }
+			++p;
+			return *this;
+		}
 		/**
 		 * TODO iter--
 		 */
 		iterator operator--(int) {
-	            iterator tmp = *this;
-	            --p;
-	            return tmp;
-	        }
+			iterator tmp = *this;
+			--p;
+			return tmp;
+		}
 		/**
 		 * TODO --iter
 		 */
 		iterator& operator--() {
-	            --p;
-	            return *this;
-	        }
+			--p;
+			return *this;
+		}
 		/**
 		 * TODO *it
 		 */
 		T& operator*() const {
-	            return *p;
-	        }
+			return *p;
+		}
 		/**
 		 * a operator to check whether two iterators are same (pointing to the same memory address).
 		 */
 		bool operator==(const iterator &rhs) const {
-	            if (p == rhs.p && v == rhs.v) {
-	                return true;
-	            }
-	            return false;
-	        }
+			if (p == rhs.p && v == rhs.v) {
+				return true;
+			}
+			return false;
+		}
 		bool operator==(const const_iterator &rhs) const {
-	            if (p == rhs.p && v == rhs.v) {
-	                return true;
-	            }
-	            return false;
-	        }
+			if (p == rhs.p && v == rhs.v) {
+				return true;
+			}
+			return false;
+		}
 		/**
 		 * some other operator for iterator.
 		 */
 		bool operator!=(const iterator &rhs) const {
-	            if (p == rhs.p && v == rhs.v) {
-	                return false;
-	            }
-	            return true;
-	        }
+			if (p == rhs.p && v == rhs.v) {
+				return false;
+			}
+			return true;
+		}
 		bool operator!=(const const_iterator &rhs) const {
-	            if (p == rhs.p && v == rhs.v) {
-	                return false;
-	            }
-	            return true;
-	        }
+			if (p == rhs.p && v == rhs.v) {
+				return false;
+			}
+			return true;
+		}
 	};
 	/**
 	 * TODO
