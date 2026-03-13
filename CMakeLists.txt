@@ -12,4 +12,5 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 include(GoogleTest)
 add_subdirectory(vector)
+add_subdirectory(deque)
 enable_testing()
