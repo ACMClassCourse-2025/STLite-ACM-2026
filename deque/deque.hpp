@@ -42,12 +42,14 @@ namespace sjtu {
 			int chunk_index;
 			int inner_index;
 			const deque* d;
-			//检查迭代器有效性
 			bool is_valid() const {
 				if (d == nullptr) {
 					return false;
 				}
 				if (chunk_index < d->first_chunk || chunk_index > d->last_chunk) {
+					return false;
+				}
+				if (d->queue[chunk_index] == nullptr) {
 					return false;
 				}
 				if (chunk_index == d->first_chunk && inner_index < d->first_index) {
@@ -629,6 +631,9 @@ namespace sjtu {
 				if (first_chunk >= cur_size) {
 					grow_map(1,1 );
 				}
+				if (queue[first_chunk] != nullptr) {
+					::operator delete(queue[first_chunk]);
+				}
 				queue[first_chunk] = static_cast<T*>(::operator new(CHUNK_SIZE * sizeof(T)));
 				new (queue[first_chunk] + first_index) T(value);
 				last_chunk = first_chunk;
@@ -661,19 +666,21 @@ namespace sjtu {
 				throw container_is_empty();
 			}
 			queue[last_chunk][last_index].~T();
-			if (last_index > 0) {
-				--last_index;
+			if (cnt == 1) {
+				::operator delete(queue[last_chunk]);
+				queue[last_chunk] = nullptr;
+				first_chunk = last_chunk = cur_size / 2;
+				first_index = last_index = 0;
 			}
 			else {
-				::operator delete (queue[last_chunk]);
-				queue[last_chunk] = nullptr;
-				if (last_chunk > first_chunk) {
-					--last_chunk;
-					last_index = CHUNK_SIZE - 1;
+				if (last_index > 0) {
+					--last_index;
 				}
 				else {
-					first_chunk = last_chunk = cur_size / 2;
-					first_index = last_index = 0;
+					::operator delete(queue[last_chunk]);
+					queue[last_chunk] = nullptr;
+					--last_chunk;
+					last_index = CHUNK_SIZE - 1;
 				}
 			}
 			--cnt;
@@ -711,19 +718,21 @@ namespace sjtu {
 				throw container_is_empty();
 			}
 			queue[first_chunk][first_index].~T();
-			if (first_index + 1 < CHUNK_SIZE) {
-				++first_index;
+			if (cnt == 1) {
+				::operator delete(queue[first_chunk]);
+				queue[first_chunk] = nullptr;
+				first_chunk = last_chunk = cur_size / 2;
+				first_index = last_index = 0;
 			}
 			else {
-				::operator delete (queue[first_chunk]);
-				queue[first_chunk] = nullptr;
-				if (first_chunk < last_chunk) {
-					++first_chunk;
-					first_index = 0;
+				if (first_index + 1 < CHUNK_SIZE) {
+					++first_index;
 				}
 				else {
-					first_chunk = last_chunk = cur_size / 2;
-					first_index = last_index = 0;
+					::operator delete(queue[first_chunk]);
+					queue[first_chunk] = nullptr;
+					++first_chunk;
+					first_index = 0;
 				}
 			}
 			--cnt;
