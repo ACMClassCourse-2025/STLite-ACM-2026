@@ -1,8 +1,8 @@
 ---
 BasedOnStyle: Google
-IndentWidth: 4
+IndentWidth: 2
 UseTab: false
-BreakBeforeBraces: Attach
+BreakBeforeBraces: Allman
 ColumnLimit: 80
 AllowShortFunctionsOnASingleLine: None
 AllowShortBlocksOnASingleLine: Never
