@@ -1,0 +1,112 @@
+# The content of this answer file doesn't matter.
+# Here's the output of a certain implementation (fib heap).
+Estimating algorithm complexity... Just for fun.
+
+
+-------------[PushTest-1] (expected complexity: O(nlogn))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   0.139569  0.403398  1.28012   4.19802   13.0817   18.1078   36.2155
+  [Operation Cost]     2999     10000     30001     100002    300003    500004   1000005
+--------------------------------------
+Estimated function complexity (from time cost): O(n)
+Estimated algorithmic constant (from time cost): 0.000041
+Estimated comparison complexity (from operation cost): O(n)
+Estimated algorithmic constant (from operation cost): 0.999931
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[PushTest-2] (expected complexity: O(nlogn))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   0.066749  0.21653   0.801111  2.67658    7.5786   10.6304   52.8198
+  [Operation Cost]     3000     10001     30002     100003    300004    500005   1000006
+--------------------------------------
+Estimated function complexity (from time cost): O(nlogn)
+Estimated algorithmic constant (from time cost): 0.000002
+Estimated comparison complexity (from operation cost): O(n)
+Estimated algorithmic constant (from operation cost): 1.000000
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[PopTest-1] (expected complexity: O(nlogn))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   1.44106   5.60428   19.5045   87.7737   320.148   653.571   1494.54
+  [Operation Cost]    74024     289852    954999   3531247   11729014  20496037  43638125
+--------------------------------------
+Estimated function complexity (from time cost): O(nlogn)
+Estimated algorithmic constant (from time cost): 0.000055
+Estimated comparison complexity (from operation cost): O(nlogn)
+Estimated algorithmic constant (from operation cost): 2.155272
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[PopTest-2] (expected complexity: O(nlogn))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   2.35302   11.6238   43.6284   165.183   609.622    1152.5   2184.58
+  [Operation Cost]    94490     358679   1155745   4280436   14000414  24313990  51275395
+--------------------------------------
+Estimated function complexity (from time cost): O(nlogn)
+Estimated algorithmic constant (from time cost): 0.000099
+Estimated comparison complexity (from operation cost): O(nlogn)
+Estimated algorithmic constant (from operation cost): 2.614143
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[PushAndPopTest] (expected complexity: O(nlogn))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   0.209443  0.735001  1.86957   6.44324   18.5589   31.4909   66.3681
+  [Operation Cost]     5999     20001     60003     200005    600007   1000009   2000011
+--------------------------------------
+Estimated function complexity (from time cost): O(n)
+Estimated algorithmic constant (from time cost): 0.000066
+Estimated comparison complexity (from operation cost): O(n)
+Estimated algorithmic constant (from operation cost): 1.999931
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[MergeTest-1] (expected complexity: O(logn))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   0.000502  0.000347  0.000147  0.00021   0.000245  0.000592  0.000659
+  [Operation Cost]      1         1         1         1         1         1         1
+--------------------------------------
+Estimated function complexity (from time cost): Unknown
+Estimated algorithmic constant (from time cost): 0.479620
+Estimated comparison complexity (from operation cost): O(1)
+Estimated algorithmic constant (from operation cost): 1.000000
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[MergeTest-2] (expected complexity: O(n))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   0.085287  0.29982   0.859349  2.85813   9.08844   22.4113   38.1073
+  [Operation Cost]     2999     10000     30001     100002    300003    500004   1000005
+--------------------------------------
+Estimated function complexity (from time cost): O(nlogn)
+Estimated algorithmic constant (from time cost): 0.000002
+Estimated comparison complexity (from operation cost): O(n)
+Estimated algorithmic constant (from operation cost): 0.999931
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------
+
+
+-------------[ClearTest] (expected complexity: O(n))
+   [Problem Size]      3000     10001     30002     100003    300004    500005   1000006
+  [Time Cost (ms)]   0.079705  0.295329  0.825914  2.27163    6.9244   11.4958   22.0389
+--------------------------------------
+Estimated function complexity (from time cost): O(n)
+Estimated algorithmic constant (from time cost): 0.000025
+--------------------------------------
+Final verdict (with the most optimistic estimation above): Pass
+--------------------------------------

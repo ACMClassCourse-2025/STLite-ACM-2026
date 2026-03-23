@@ -1,0 +1,6 @@
+# Some information printed through stderr might appear in your console.
+# The following is what shall be output through stdout.
+Testing data management and self merge... Pass.
+Testing multiple maximums... Pass.
+Testing clear function... Pass.
+Testing exceptions... Pass.
