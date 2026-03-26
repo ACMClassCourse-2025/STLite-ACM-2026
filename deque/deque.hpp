@@ -454,9 +454,7 @@ class deque
    */
   T &at(const size_t &pos)
   {
-    int size =
-        end_.cur_ - start_.cur_ + (end_.node_ - start_.node_) * blockSize;
-    if (pos >= size)
+    if (pos >= data_size_)
     {
       throw index_out_of_bound();
     }
@@ -467,9 +465,7 @@ class deque
   }
   const T &at(const size_t &pos) const
   {
-    int size =
-        end_.cur_ - start_.cur_ + (end_.node_ - start_.node_) * blockSize;
-    if (pos >= size)
+    if (pos >= data_size_)
     {
       throw index_out_of_bound();
     }
@@ -480,9 +476,7 @@ class deque
   }
   T &operator[](const size_t &pos)
   {
-    int size =
-        end_.cur_ - start_.cur_ + (end_.node_ - start_.node_) * blockSize;
-    if (pos >= size)
+    if (pos >= data_size_)
     {
       throw index_out_of_bound();
     }
@@ -493,9 +487,7 @@ class deque
   }
   const T &operator[](const size_t &pos) const
   {
-    int size =
-        end_.cur_ - start_.cur_ + (end_.node_ - start_.node_) * blockSize;
-    if (pos >= size)
+    if (pos >= data_size_)
     {
       throw index_out_of_bound();
     }
