@@ -15,7 +15,7 @@ function(add_map_case case_name)
   )
 
   set_target_properties(${target_name} PROPERTIES
-    CXX_STANDARD 20
+    CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
   )
 
@@ -55,7 +55,7 @@ function(add_map_corner_case case_id)
   )
 
   set_target_properties(${target_name} PROPERTIES
-    CXX_STANDARD 20
+    CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
   )
 
