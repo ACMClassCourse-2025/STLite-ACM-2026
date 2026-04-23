@@ -85,7 +85,6 @@ template<
 
     /**
      * for the support of it->first.
-     * See <http://kelvinh.github.io/blog/2013/11/20/overloading-of-member-access-operator-dash-greater-than-symbol-in-cpp/> for help.
      */
     value_type *operator->() const
     noexcept {}
